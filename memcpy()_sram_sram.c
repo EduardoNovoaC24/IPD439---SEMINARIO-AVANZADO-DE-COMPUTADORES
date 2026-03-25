@@ -89,9 +89,9 @@ void run_memcpy_test(uint16_t len)
 {
   memset(dst_sram, 0, len);
 
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(Timing_GPIO_Port, Timing_Pin, GPIO_PIN_SET);
   memcpy(dst_sram, src_sram, len);
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(Timing_GPIO_Port, Timing_Pin, GPIO_PIN_RESET);
 
   memcpy_ok = verify_copy(src_sram, dst_sram, len);
 }
