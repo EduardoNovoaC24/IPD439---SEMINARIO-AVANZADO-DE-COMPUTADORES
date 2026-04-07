@@ -2,16 +2,6 @@
 IPD439 - Seminario Avanzado de Computadores
 Tarea 2 - Pregunta 1(b)
 Análisis de precisión y exactitud de tareas periódicas FreeRTOS
-
-Uso:
-    python3 analisis_periodos.py <archivo_csv>
-
-El archivo CSV debe ser exportado desde PulseView con:
-    File -> Export Comma-separated values...
-
-Las señales deben estar en los canales correctos:
-    - CH_TAREA1: canal de la Tarea 1 (período 100 ms)
-    - CH_TAREA2: canal de la Tarea 2 (período 200 ms)
 """
 
 import csv
@@ -30,9 +20,6 @@ SAMPLE_RATE   = 20000          # Hz - frecuencia de muestreo usada en PulseView
 T_ESP_TAREA1  = 100.0          # ms - período esperado Tarea 1
 T_ESP_TAREA2  = 200.0          # ms - período esperado Tarea 2
 
-# =============================================================================
-# LECTURA DEL CSV Y DETECCIÓN DE TRANSICIONES
-# =============================================================================
 
 def leer_transiciones(archivo, ch1, ch2):
     """Lee el CSV y devuelve las listas de transiciones de cada canal."""
