@@ -14,7 +14,7 @@ ser = serial.Serial(
 
 time.sleep(0.2)
 
-# Sincronización con el bootloader
+
 ser.write(bytes([0x7F]))
 resp_sync = ser.read(1)
 
@@ -25,10 +25,10 @@ if not resp_sync:
 
 print("ACK sync:", resp_sync.hex())
 
-# Enviar Get Version = 0x01 0xFE
+
 ser.write(bytes([0x01, 0xFE]))
 
-# Leer respuesta: ACK + versión + opt1 + opt2 + ACK
+
 respuesta = ser.read(5)
 
 if not respuesta or len(respuesta) < 5:
