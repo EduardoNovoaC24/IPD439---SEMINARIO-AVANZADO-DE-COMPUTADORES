@@ -14,7 +14,6 @@
 	
 	time.sleep(0.2)
 	
-	# Sincronización
 	ser.write(bytes([0x7F]))
 	resp_sync = ser.read(1)
 	
@@ -25,10 +24,9 @@
 	
 	print("ACK sync:", resp_sync.hex())
 	
-	# Enviar Get ID = 0x02 0xFD
 	ser.write(bytes([0x02, 0xFD]))
 	
-	#  Leer respuesta
+
 	respuesta = ser.read(5)
 	
 	if respuesta:
